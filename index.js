@@ -3,6 +3,8 @@ const app = express()
 const bodyParser = require('body-parser')
 const port = 8080
 const connection = require('./database/connection')
+const CategoriesController = require('./categories/CategoriesController')
+const ArticlesController = require('./articles/ArticlesController')
 
 //View engine
 app.set('view engine', 'ejs')
@@ -24,11 +26,16 @@ connection
         console.log(`ocorreu o segunte erro ${err}`)
     })
 
+//index
 app.get('/', (req, res) => {
     res.render('index')
 })
 
+//routes
+app.use('/', CategoriesController)
+app.use('/', ArticlesController)
 
+//listen
 app.listen(port, () => {
     console.log(`O servidor esta rodando no link http://localhost:${port}`)
 })
