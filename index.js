@@ -5,6 +5,8 @@ const port = 8080
 const connection = require('./database/connection')
 const CategoriesController = require('./categories/CategoriesController')
 const ArticlesController = require('./articles/ArticlesController')
+const Article = require('./articles/Article')
+const Category = require('./categories/Category')
 
 //View engine
 app.set('view engine', 'ejs')
