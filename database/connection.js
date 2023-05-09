@@ -6,7 +6,8 @@ const connection = new Sequelize(
     '123456',
     {
         host: 'localhost',
-        dialect: 'mysql'
+        dialect: 'mysql',
+        timezone: '-3:00'
     }
 )
 
