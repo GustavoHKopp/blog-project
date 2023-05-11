@@ -1,6 +1,25 @@
 <%- include ('partials/header.ejs')%>
+<%- include ('partials/homeNavbar.ejs')%>
 <body>
-    <%- include ('partials/navbar.ejs')%>
-    <h1>Hello world!</h1>
+    <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Bem-vindo</h1>
+                <p class="lead">Este é um simples blog de Gustavo Henrique Kopp.</p>
+                <hr class="my-4">
+                <p>Estou criado ele para aperfeicoar meus conhecimentos em Node.js e outras linguagens</p>
+                <a class="btn btn-primary btn-lg" href="/redes" role="button">Redes sociais</a>
+            </div>
+            <hr>
+        <% articles.forEach(article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title %></h2>
+                </div> 
+                <div class="card-body">
+                    <a href="" class="btn btn-success">Ler artigo</a>
+                </div>
+            </div> <br>
+        <%})%> 
+    </div>
 </body>
 <%- include ('partials/footer.ejs')%>
